@@ -10,28 +10,36 @@
 public class node<T> {
 
     private T val; //data stored
-    private node N; //node it is connected to
+    private node Next; //child node
+    private node Prev; //parent node
 
 
     public node(){//default constructor
         val=null;
-        N = null;
+        Next = null;
     }
-    public node(T t, node n){//constructor with refrence node and value
+    public node(T t, node n, node p){//constructor with refrence node and value
         this.val=t;
-        this.N=n;
+        this.Next=n;
+        this.Prev=p;
 
 
     }
     public T getValue(){//retuens value
         return val;
     }
-    public node getConnectedNode(){//returns connected node
-        return N;
+    public node getNext(){//returns child node
+        return Next;
+    }
+    public node getPrev(){//returns previous node
+        return Prev;
     }
 
-    public void setConnectedNode(node n) {//sets connected node
-        N = n;
+    public void setNext(node n) {//sets connected node
+        Next = n;
+    }
+    public void setPrev(node n){
+        Prev=n;
     }
     public void setDataType(T t){//sets value
         this.val=t;
