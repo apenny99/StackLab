@@ -1,4 +1,4 @@
-public class StackNode {
+public class StackNode<E, T> {
     private int length;
     private node root;
 
@@ -14,5 +14,9 @@ public class StackNode {
             return n2;
         }
         return topNode(n2.getPrev());
+    }
+    public T peek(){
+        return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
+
     }
 }
