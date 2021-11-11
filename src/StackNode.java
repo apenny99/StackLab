@@ -26,10 +26,16 @@ public class StackNode<E, T> {
         return topNode(n2.getPrev());
     }
 
+
+    public int size(){//returns the length counter that is in the class instance data.
+        return length;
+    } 
+
     public boolean isEmpty(){
         if(length==1&&root.getValue()==null){//checks if it only has the root node and if the root node is null or if it has a value. 
             return true;
         }
         return false;
+
     }
 }
