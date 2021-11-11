@@ -1,6 +1,18 @@
-public class StackNode<E> {
+/**
+ * StackNode.java
+ * Makes a stack using the Node class
+ * Author: August Penny
+ * Collaborator(s): The names of anyone you collaborated with here
+ * Collaboration: Describe the collaboration that took place
+ * Date: Date the program is handed in 11/11/21
+ **/
+
+public class StackNode<E, T> {
     private int length;
+
     private node root;
+
+
 
     public StackNode(){
         root=new node();
@@ -15,6 +27,7 @@ public class StackNode<E> {
         }
         return topNode(n2.getPrev());
     }
+
 
 
 
@@ -33,6 +46,24 @@ public class StackNode<E> {
 
         }
         length++;
+    }
+
+
+    public T peek(){
+        return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
+    }
+
+
+
+    public int size(){//returns the length counter that is in the class instance data.
+        return length;
+    } 
+
+    public boolean isEmpty(){
+        if(length==1&&root.getValue()==null){//checks if it only has the root node and if the root node is null or if it has a value. 
+            return true;
+        }
+        return false;
     }
 
 }
