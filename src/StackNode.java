@@ -1,3 +1,4 @@
+
 /**
  * StackNode.java
  * Makes a stack using the Node class
@@ -6,6 +7,7 @@
  * Collaboration: Describe the collaboration that took place
  * Date: Date the program is handed in 11/11/21
  **/
+
 public class StackNode<E, T> {
     private int length;
 
@@ -26,6 +28,11 @@ public class StackNode<E, T> {
         return topNode(n2.getPrev());
     }
 
+    public T peek(){
+        return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
+    }
+
+
 
     public int size(){//returns the length counter that is in the class instance data.
         return length;
@@ -36,6 +43,5 @@ public class StackNode<E, T> {
             return true;
         }
         return false;
-
     }
 }
