@@ -15,4 +15,8 @@ public class StackNode {
         }
         return topNode(n2.getPrev());
     }
+
+    public int size(){//returns the length counter that is in the class instance data.
+        return length;
+    }
 }
