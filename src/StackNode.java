@@ -1,4 +1,3 @@
-
 /**
  * StackNode.java
  * Makes a stack using the Node class
@@ -14,6 +13,7 @@ public class StackNode<E, T> {
     private node root;
 
 
+
     public StackNode(){
         root=new node();
         length=0;
@@ -27,6 +27,27 @@ public class StackNode<E, T> {
         }
         return topNode(n2.getPrev());
     }
+
+
+
+
+    public void push(E element){//method to make a node with inputted value and add it on to the top of the chain
+        node n2=new node(element,null,null);
+        if(length==0){//if the first value, sets the value of the root node to the input value
+            root.setDataType(element);
+        }
+        if(length==1){//if second value to be added, directly interacts with the root.
+            n2.setNext(root);
+            root.setPrev(n2);
+        }
+        if(length>1){//if more than second value to be added, uses recursive method.
+            n2.setNext(topNode(root));
+            topNode(root).setPrev(n2);
+
+        }
+        length++;
+    }
+
 
     public T peek(){
         return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
@@ -44,4 +65,5 @@ public class StackNode<E, T> {
         }
         return false;
     }
+
 }
