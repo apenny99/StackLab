@@ -22,8 +22,6 @@ public class node<T> {
         this.val=t;
         this.Next=n;
         this.Prev=p;
-
-
     }
     public T getValue(){//retuens value
         return val;
