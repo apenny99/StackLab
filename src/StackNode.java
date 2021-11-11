@@ -17,13 +17,10 @@ public class StackNode<E, T> {
         return topNode(n2.getPrev());
     }
 
-
-    public T pop(){
-        topNode(root).getPrev().setNext(null);//sets the child of the top node in the stack to have a parent of null.
-        //because the list is traversed top to bottom, this means that when the method to get the nodes parent is called,
-        //it will return null, cutting off the last node.
-        length--;
-        return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
-
+    public boolean isEmpty(){
+        if(length==1&&root.getValue()==null){//checks if it only has the root node and if the root node is null or if it has a value. 
+            return true;
+        }
+        return false;
     }
 }
