@@ -63,6 +63,9 @@ public class StackNode<E, T> {
         return false;
     }
      public T pop(){
+        if (length==0){
+            return null;
+        }
         node temp = topNode(root);
         node temp2 = topNode(root).getNext();//gets a temp node at the second to top position (will be top when the method finishes)
         temp2.setPrev(null);
